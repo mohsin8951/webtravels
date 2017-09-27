@@ -8,6 +8,7 @@
 // Switch between the included languages
 Route::get('lang/{lang}', 'LanguageController@swap');
 
+
 /* ----------------------------------------------------------------------- */
 
 /*
@@ -34,3 +35,5 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
      */
     includeRouteFiles(__DIR__.'/Backend/');
 });
+
+Route::resource('tours', 'TourController');

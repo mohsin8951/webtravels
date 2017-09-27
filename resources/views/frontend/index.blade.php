@@ -1,198 +1,123 @@
 @extends('frontend.layouts.app')
-
 @section('content')
+<section id="slider1">
+<div class="row">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{{asset('img/lake.jpg')}}" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="{{asset('img/lake.jpg')}}" alt="Chicago" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="{{asset('img/lake.jpg')}}" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</div>
+</section>
+
+
+<div class="container">
+
+<section id="slider">
+  <div class="row">
+     <div class="col-md-4">
+      <img src="{{asset('img/small.jpg')}}" class="user-image" alt="User Image" class="img-responsive">
+      <div class="decs">
+          <h2>Product 1</h2>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum recently with desktop publishing software like Aldus PageMaker including versions of Lo
+      </div>
+     </div>
+
+     <div class="col-md-4">
+      <img src="{{asset('img/small.jpg')}}" class="user-image" alt="User Image" class="img-responsive">
+      <div class="decs">
+          <h2>Product 2</h2>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum recently with desktop publishing software like Aldus PageMaker including versions of Lo
+      </div>
+     </div>
+
+     <div class="col-md-4">
+      <img src="{{asset('img/small.jpg')}}" class="user-image" alt="User Image" class="img-responsive">
+      <div class="decs">
+          <h2>Product 3</h2>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum recently with desktop publishing software like Aldus PageMaker including versions of Lo
+      </div>
+     </div>
+  </div>
+</section>
+
+
+<section id="slider">
+  <div class="row">
+     <div class="col-md-4">
+      <img src="{{asset('img/small.jpg')}}" class="user-image" alt="User Image" class="img-responsive">
+      <div class="decs">
+        <h2>Product 1</h2>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum recently with desktop publishing software like Aldus PageMaker including versions of Lo
+      </div>
+     </div>
+
+     <div class="col-md-4">
+      <img src="{{asset('img/small.jpg')}}" class="user-image" alt="User Image" class="img-responsive">
+      <div class="decs">
+        <h2>Product 2</h2>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum recently with desktop publishing software like Aldus PageMaker including versions of Lo
+      </div>
+     </div>
+
+     <div class="col-md-4">
+      <img src="{{asset('img/small.jpg')}}" class="user-image" alt="User Image" class="img-responsive">
+      <div class="decs">
+        <h2>Product 3</h2>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum recently with desktop publishing software like Aldus PageMaker including versions of Lo
+      </div>
+     </div>
+  </div>
+</section>
+
+
+
+<section id="slider">
     <div class="row">
-
-        <example></example>
-
-        <div class="col-xs-12">
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-home"></i> {{ trans('navs.general.home') }}
-                </div>
-
-                <div class="panel-body">
-                    {{ trans('strings.frontend.welcome_to', ['place' => app_name()]) }}
-                </div>
+        <div class="col-md-4">
+            <div class="post">
+              <img src="{{asset('img/qabar.png')}}" class="user-image" alt="User Image" class="img-responsive">
             </div>
-            <!-- panel -->
-
-        </div><!-- col-md-10 -->
-
-        @role('Administrator')
-            {{-- You can also send through the Role ID --}}
-
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_blade_extensions') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.test') . ' 1: ' . trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                    </div>
-                </div><!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endauth
-
-        @if (access()->hasRole('Administrator'))
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_access_helper.role_name') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.test') . ' 2: ' . trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                    </div>
-                </div><!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endif
-
-        @if (access()->hasRole(1))
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_access_helper.role_id') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.test') . ' 3: ' . trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                    </div>
-                </div><!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endif
-
-        @if (access()->hasRoles(['Administrator', 1]))
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_access_helper.array_roles_not') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.test') . ' 4: ' . trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                    </div>
-                </div><!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endif
-
-        {{-- The second parameter says the user must have all the roles specified. Administrator does not have the role with an id of 2, so this will not show. --}}
-        @if (access()->hasRoles(['Administrator', 2], true))
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_access_helper.array_roles') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                    </div>
-                </div><!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endif
-
-        @permission('view-backend')
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.permission') . trans('strings.frontend.tests.using_access_helper.permission_name') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.test') . ' 5: ' . trans('strings.frontend.tests.you_can_see_because_permission', ['permission' => 'view-backend']) }}
-                    </div>
-                </div><!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endauth
-
-        @if (access()->hasPermission(1))
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.permission') . trans('strings.frontend.tests.using_access_helper.permission_id') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.test') . ' 6: ' . trans('strings.frontend.tests.you_can_see_because_permission', ['permission' => 'view_backend']) }}
-                    </div>
-                </div><!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endif
-
-        @if (access()->hasPermissions(['view-backend', 1]))
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.permission') . trans('strings.frontend.tests.using_access_helper.array_permissions_not') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.test') . ' 7: ' . trans('strings.frontend.tests.you_can_see_because_permission', ['permission' => 'view_backend']) }}
-                    </div>
-                </div><!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endif
-
-        @if (access()->hasPermissions(['view-backend', 2], true))
-            <div class="col-xs-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.permission') . trans('strings.frontend.tests.using_access_helper.array_permissions') }}</div>
-
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.tests.you_can_see_because_permission', ['permission' => 'view_backend']) }}
-                    </div>
-                </div>
-                <!-- panel -->
-
-            </div><!-- col-md-10 -->
-        @endif
-
-        <div class="col-xs-12">
-
-          <div class="post">
-           
-          </div>
-
-
-
-
-
-
-
-
-            <!-- <div class="panel panel-default">
-                <div class="panel-heading"><i class="fa fa-home"></i> Bootstrap Glyphicon {{ trans('strings.frontend.test') }}</div>
-
-                <div class="panel-body">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon glyphicon-euro" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon glyphicon-cloud" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                </div>
-            </div> -->
-            <!-- panel -->
-
         </div>
-        <!-- col-md-10 -->
 
-        <div class="col-xs-12">
-
-            <!-- <div class="panel panel-default">
-                <div class="panel-heading"><i class="fa fa-home"></i> Font Awesome {{ trans('strings.frontend.test') }}</div>
-
-                <div class="panel-body">
-                    <i class="fa fa-home"></i>
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-pinterest"></i>
+                <div class="col-xs-8">
+                    <div class="post">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lo
+                    </div>
                 </div>
-            </div> -->
-            <!-- panel -->
 
-        </div><!-- col-md-10 -->
+      </div><!--row-->
+      </section>
+    </div>
 
-    </div><!--row-->
 @endsection

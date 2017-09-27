@@ -12,6 +12,7 @@ Route::group([
     /*
      * User Management
      */
+
     Route::group([
         'middleware' => 'access.routeNeedsRole:1',
     ], function () {
@@ -31,6 +32,8 @@ Route::group([
              * User CRUD
              */
             Route::resource('user', 'UserController');
+
+            Route::resource('tourpackage','TourController');
 
             /*
              * Specific User
@@ -58,6 +61,7 @@ Route::group([
 
                 // Session
                 Route::get('clear-session', 'UserSessionController@clearSession')->name('user.clear-session');
+
             });
 
             /*
@@ -69,9 +73,11 @@ Route::group([
             });
         });
 
+
         /*
         * Role Management
         */
+
         Route::group(['namespace' => 'Role'], function () {
             Route::resource('role', 'RoleController', ['except' => ['show']]);
 

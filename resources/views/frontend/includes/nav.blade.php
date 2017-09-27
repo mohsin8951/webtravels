@@ -12,12 +12,15 @@
         </div><!--navbar-header-->
 
         <div class="collapse navbar-collapse" id="frontend-navbar-collapse">
-            <ul class="nav navbar-nav">
+            <!-- <ul class="nav navbar-nav">
                 <li>{{ link_to_route('frontend.macros', trans('navs.frontend.macros'), [], ['class' => active_class(Active::checkRoute('frontend.macros')) ]) }}</li>
-            </ul>
+            </ul> -->
 
             <ul class="nav navbar-nav navbar-right">
-                @if (config('locale.status') && count(config('locale.languages')) > 1)
+
+                 <!-- <li><a href="{{url('about')}}">About</a></li> -->
+                 <!-- <li><a href="{{url('tours')}}">Tours Packages</a></li> -->
+                <!-- @if (config('locale.status') && count(config('locale.languages')) > 1)
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ trans('menus.language-picker.language') }}
@@ -26,12 +29,14 @@
 
                         @include('includes.partials.lang')
                     </li>
-                @endif
+                @endif -->
 
                 @if ($logged_in_user)
                     <li>{{ link_to_route('frontend.user.dashboard', trans('navs.frontend.dashboard'), [], ['class' => active_class(Active::checkRoute('frontend.user.dashboard')) ]) }}</li>
                 @endif
-
+                  @if ($logged_in_user)
+                      <li>{{ link_to_route('frontend.user.dashboard', trans('navs.frontend.dashboard'), [], ['class' => active_class(Active::checkRoute('frontend.user.dashboard')) ]) }}</li>
+                  @endif
                 @if (! $logged_in_user)
                     <li>{{ link_to_route('frontend.auth.login', trans('navs.frontend.login'), [], ['class' => active_class(Active::checkRoute('frontend.auth.login')) ]) }}</li>
 

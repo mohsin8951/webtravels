@@ -70,8 +70,10 @@
                             <span>{{ trans('labels.backend.access.roles.management') }}</span>
                         </a>
                     </li>
+
                 </ul>
             </li>
+
             @endauth
 
             <li class="{{ active_class(Active::checkUriPattern('admin/log-viewer*')) }} treeview">
@@ -96,6 +98,15 @@
                     </li>
                 </ul>
             </li>
+
+              <li class="{{ active_class(Active::checkUriPattern('admin/tours*')) }} treeview">
+                <a href="#">
+                    <i class="fa fa-list"></i>
+                    <span>{{('backend.tours.dashboard') }}</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+              </li>
+
         </ul><!-- /.sidebar-menu -->
     </section><!-- /.sidebar -->
 </aside>

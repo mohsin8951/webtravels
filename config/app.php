@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel 5 Boilerplate'),
+    'name' => env('APP_NAME', 'WebTravels'),
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        // slider
+        Edofre\SliderPro\SliderProServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -202,6 +204,7 @@ return [
         App\Providers\MacroServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+   Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -261,6 +264,9 @@ return [
         'Gravatar'    => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Html'        => Collective\Html\HtmlFacade::class,
         'Socialite'   => Laravel\Socialite\Facades\Socialite::class,
+        'Form' => Collective\Html\FormFacade::class,
+
+         'SliderPro' => Edofre\SliderPro\Facades\SliderPro::class,
 
     ],
 

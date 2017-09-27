@@ -14,11 +14,12 @@
         "arcanedev/no-captcha": "~3.0",
         "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
+        "edofre/laravel-slider-pro": "^1.0",
         "hieu-le/active": "~3.0",
         "laravel/framework": "5.4.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
-        "laravelcollective/html": "5.4.*",
+        "laravelcollective/html": "^5.4.0",
         "yajra/laravel-datatables-oracle": "^7.0"
     },
     "require-dev": {
